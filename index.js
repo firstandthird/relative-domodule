@@ -17,7 +17,7 @@ class Relative extends Domodule {
     this.el.innerHTML = result.string;
 
     if (result.difference < Units.Hours) {
-      setTimeout(this.render.bind(this), 6000);
+      setTimeout(this.render.bind(this), Units.Minutes);
     }
   }
 }
