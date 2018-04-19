@@ -1,0 +1,69 @@
+{
+  "name": "relative-domodule",
+  "version": "1.0.0",
+  "description": "Easily animate numbers",
+  "main": "dist/relative-domodule.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "scriptkit",
+    "dev": "scriptkit dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishonly": "scriptkit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstandthird/relative-domodule.git"
+  },
+  "keywords": [
+    "domodule",
+    "relative",
+    "date"
+  ],
+  "author": "First+Third <code@firstandthird.com> (http://firstandthird.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/firstandthird/relative-domodule/issues"
+  },
+  "homepage": "https://github.com/firstandthird/relative-domodule#readme",
+  "devDependencies": {
+    "eslint-config-firstandthird": "4.3.0",
+    "eslint-plugin-compat": "^2.2.0",
+    "eslint-plugin-import": "^2.10.0",
+    "phantomjs-prebuilt": "^2.1.16",
+    "scriptkit": "0.3.0",
+    "tap-spec": "^4.1.1",
+    "tape-rollup": "4.6.4",
+    "tape-run": "4.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true
+    },
+    "extends": "firstandthird",
+    "plugins": [
+      "compat"
+    ],
+    "rules": {
+      "compat/compat": 2
+    }
+  },
+  "scriptkit": {
+    "test": {
+      "enabled": false
+    },
+    "files": {
+      "dist/relative-domodule.js": "index.js"
+    },
+    "scripts": {
+      "babel": {
+        "exclude": [
+          "node_modules/tape-rollup/*"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "@firstandthird/relative": "^1.1.0",
+    "domodule": "^5.1.3"
+  }
+}

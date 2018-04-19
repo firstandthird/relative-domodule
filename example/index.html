@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="create">Add new</button>
+  <button id="autoupdate">Add new that autoupdates</button>
+
+  <script src="../dist/relative-domodule.js"></script>
+<script>
+  const button = document.getElementById('create');
+  const update = document.getElementById('autoupdate');
+
+  button.addEventListener('click', () => {
+    const days = Math.floor(Math.random() * 35) + 1;
+    const now = new Date();
+
+    now.setDate(now.getDate() - days);
+    const element = document.createElement('div');
+    element.innerHTML = `<span data-module="Relative" data-module-date="${now.toISOString()}"></span>`;
+    document.body.appendChild(element);
+    RelativeDomodule.discover();
+  });
+
+  update.addEventListener('click', () => {
+    const now = new Date();
+
+    const element = document.createElement('div');
+    element.innerHTML = `<span data-module="Relative" data-module-date="${now.toISOString()}"></span>`;
+    document.body.appendChild(element);
+    RelativeDomodule.discover();
+  });
+</script>
+</body>
+</html>
